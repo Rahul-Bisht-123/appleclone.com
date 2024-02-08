@@ -1,0 +1,874 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------nav--------------- */
+nav {
+  background-color: rgba(0, 0, 0, .8);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  padding: 0 2vw;
+  justify-content: center;
+  gap: 2.5vw;
+  z-index: 999;
+  overflow: scroll;
+}
+
+nav a img {
+  opacity: 80%;
+}
+
+.drop-down>a {
+  color: rgba(255, 255, 255, .9);
+  text-decoration: none;
+  font-size: 0.8em;
+  display: block;
+}
+
+.drop-down-content {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .9);
+  left: 0;
+  top: 0;
+  padding: 0 16%;
+  z-index: -1;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.7s ease-in-out;
+}
+
+/* drop down effect of nav bar comes from here */
+.drop-down:hover .drop-down-content {
+  max-height: 70%;
+  padding-bottom: 3%;
+  overflow: scroll;
+}
+
+.drop-down-content .col {
+  display: flex;
+  margin-top: 90px;
+  flex-direction: column;
+  z-index: -10;
+  height: auto;
+}
+
+.drop-down-content .col h5 {
+  color: grey;
+  font-size: 0.75em;
+  font-weight: 100;
+  margin-bottom: 13px;
+}
+
+.drop-down-content .col a {
+  color: rgb(255, 255, 255, .85);
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 0.75em;
+  line-height: 2.1;
+  margin-right: 50px;
+}
+
+.drop-down-content>.col1>a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.4em;
+  line-height: 1.8;
+  margin-right: 100px;
+}
+
+.drop-down-content>.col1>.col1-mini-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+/* ---small screen burger menu css---*/
+.burger-div {
+  display: none;
+}
+
+.burgerbox {
+  /* border: 1px solid red; */
+  position: relative;
+  width: 18px;
+  height: 20px;
+  display: flex;
+}
+
+.burgerbox .line1 {
+  position: absolute;
+  background-color: white;
+  height: 1.5px;
+  margin-bottom: 2px;
+  top: 5px;
+  opacity: 80%;
+  transition: 0.4s;
+
+}
+
+.burgerbox .line2 {
+  position: absolute;
+  top: 11px;
+  height: 1.5px;
+  background-color: white;
+  opacity: 80%;
+  transition: 0.4s;
+}
+
+.change .line1 {
+  transform: rotate(45deg) translate(-1px, 3px);
+}
+
+.change .line2 {
+  transform: rotate(-45deg)translate(0px, -6px);
+}
+
+
+/* ----media query for small screen nav bar---- */
+@media(max-width:895px) {
+
+  .burger-div {
+    display: block;
+  }
+
+  nav {
+    position: fixed;
+    padding: 3vw 0;
+    justify-content: space-around;
+    z-index: 11;
+  }
+
+  nav img {
+    height: 21px;
+  }
+
+  nav a.navlink {
+    display: none;
+  }
+
+  .drop-down>a>div.burger-lines {
+    display: flex;
+    width: 15px;
+    height: 2px;
+    z-index: 1;
+  }
+
+  .drop-down-contentt {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .9);
+    left: 0;
+    top: 0;
+    padding: 0 6%;
+    overflow: scroll;
+    z-index: 0;
+    transition: 1s;
+    height: 0;
+  }
+
+  .drop-down-contentt .col {
+    margin-top: 60px;
+  }
+
+  .drop-down-contentt .col a {
+    color: rgb(255, 255, 255);
+    display: flex;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.7em;
+    line-height: 1.5;
+  }
+}
+
+/* -------------wide banner1--------------*/
+
+section.one .widebanner1 {
+  position: relative;
+  height: 98vh;
+  width: 100vw;
+  padding-bottom: 1vh;
+  background-color: white;
+}
+
+.widebanner1>img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.widebanner1 .banner-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding-bottom: 7vh;
+}
+
+.widebanner1 .banner-text p.one {
+  font-size: 70px;
+  width: auto;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 5px;
+}
+
+.widebanner1 .banner-text p.one img {
+  height: 65px;
+}
+
+.widebanner1 .banner-text p.two {
+  display: flex;
+  font-size: 20px;
+  margin-left: 60px;
+  margin-top: 10px;
+  width: auto;
+  gap: 20px;
+}
+
+.widebanner1 .banner-text p.two a {
+  color: rgb(255, 255, 255);
+  background-color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 50px;
+}
+
+.widebanner1 .banner-text p.two a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width:800px) {
+  .widebanner1 .banner-text p.one {
+    font-size: 35px;
+  }
+
+  .widebanner1 .banner-text p.two {
+    font-size: 12px;
+    margin-left: 1px;
+  }
+
+  .widebanner1 .banner-text p.one img {
+    height: 35px;
+  }
+
+  .widebanner1 .banner-text p.two a {
+    padding: 7px 9px;
+  }
+}
+
+/* ----------wide banner2-------------- */
+.widebanner2 {
+  background-color: white;
+  height: 91vh;
+  width: 100vw;
+  position: relative;
+  padding-bottom: 1vh;
+}
+
+.widebanner2 img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.widebanner2 .widebanner2-text {
+  position: absolute;
+  top: 30px;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .1));
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 1.3;
+  flex-direction: column;
+  padding: 30px 0 0 0;
+  height: 94%;
+}
+
+.widebanner2-text p.large {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.widebanner2-text p.medium {
+  font-size: 28px;
+}
+
+.widebanner2-text>div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.widebanner2-text>div>a {
+  text-decoration: none;
+  color: rgb(56, 194, 245);
+  font-size: 20px;
+}
+
+.widebanner2-text>div>a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width:800px) {
+  .widebanner2-text p.large {
+    font-size: 35px;
+  }
+
+  .widebanner2-text p.medium {
+    font-size: 16px;
+  }
+
+  .widebanner2-text>div>a {
+    font-size: 16px;
+  }
+}
+
+/*--------- widebanner 3 "video"----------- */
+.widebanner3 {
+  position: relative;
+  height: 97vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1vh;
+}
+
+.widebanner3 video {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.widebanner3 .banner3-text {
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .2));
+  width: 100%;
+  height: 99%;
+  position: absolute;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 50px;
+  align-items: center;
+}
+
+.banner3-text p.one {
+  font-size: 16px;
+  line-height: 2;
+}
+
+.banner3-text p.two {
+  font-size: 100px;
+  font-weight: bold;
+  font-family: cursive;
+  color: rgb(238, 174, 12);
+}
+
+.banner3-text p.three {
+  font-size: 28px;
+  line-height: 2;
+}
+
+.banner3-text p.four {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 21px;
+  line-height: 3;
+}
+
+.banner3-text p.four:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media(max-width:800px) {
+
+  .banner3-text p.two {
+    font-size: 40px;
+  }
+
+  .banner3-text p.three {
+    font-size: 20px;
+  }
+
+  .banner3-text p.four {
+    font-size: 15px;
+  }
+}
+
+/* -------dual column banner section -----*/
+
+/* section 2  column 1 */
+section.two {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0 0px;
+  row-gap: 12px;
+  column-gap: 10px;
+  padding: 0 12px;
+  padding-bottom: 1vh;
+}
+
+section.two .col {
+  height: 70vh;
+  position: relative;
+}
+
+section.two>.col>img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+section.two .col .text {
+  color: white;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .1));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+section.two>.col>.text>p.one {
+  display: flex;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 5px;
+  width: auto;
+  margin-top: 50px;
+  width: auto;
+  gap: 10px;
+}
+
+section.two .col .text p.two {
+  color: rgb(253, 182, 49);
+  letter-spacing: 3px;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+section.two .col .text p.three {
+  line-height: 2.3;
+  font-size: 23px;
+  letter-spacing: 3px;
+  margin-left: 20px;
+}
+
+section.two .col .text p.four {
+  display: flex;
+  gap: 35px;
+  width: auto;
+}
+
+section.two .col .text p.four a {
+  color: rgb(132, 208, 252);
+  text-decoration: none;
+  font-size: 18px;
+
+}
+
+section.two .col .text p.four a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width:800px) {
+  section.two {
+    grid-template-columns: auto;
+    row-gap: 6px;
+    padding: 0;
+    padding-bottom: 1vh;
+
+  }
+
+  section.two .col {
+    width: 100%;
+  }
+
+  section.two .col .text p.four a {
+    font-size: 16px;
+  }
+
+  section.two .col .text p.three {
+    font-size: 19px;
+  }
+}
+
+/*------ section2 column 2 ----- */
+section.two .col2 .text {
+  color: rgb(15, 14, 14);
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+}
+
+section.two .col2 img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+section.two .col2 .text p.one {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+section.two .col2 .text p.four a {
+  color: rgb(85, 85, 199);
+}
+
+@media(max-width:800px) {
+
+  section.two .col2>.text>p.one {
+    font-size: 25px;
+  }
+
+  section.two .col2>.text>p.three {
+    font-size: 16px;
+  }
+}
+
+/*------ section2 column 3 ----- */
+
+section.two .col3 .text {
+  color: rgb(15, 14, 14);
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 225, 255, 0.1));
+}
+
+section.two .col3 .text p.four a {
+  color: purple;
+}
+
+@media(max-width:800px) {
+
+  section.two .col3>.text>p.one {
+    font-size: 25px;
+  }
+
+  section.two .col3>.text>p.three {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+}
+
+/*------ section2 column 4 ----- */
+section.two .col4 .text {
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .1));
+}
+
+@media(max-width:800px) {
+  section.two .col4>.text>p.three {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+}
+
+/*------ section2 column 5----- */
+section.two .col5 .text {
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+
+@media(max-width:800px) {
+  section.two .col5>.text>p.three {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+}
+
+/*------ section2 column 6----- */
+section.two .col6 .text {
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+}
+
+@media(max-width:800px) {
+  section.two .col6>.text>p.three {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+}
+
+
+/* ---- section 3 movie poster slider ---- */
+section.three {
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+
+.moviebox {
+  height: 70vh;
+  width: 100vw;
+  position: relative;
+}
+
+.moviebox>img {
+  object-fit: cover;
+  height: 100%;
+  width: 100vw;
+}
+
+.movietext {
+  position: absolute;
+  left: 6%;
+  bottom: 3vh;
+  display: flex;
+  width: auto;
+  gap: 15px;
+  align-items: center;
+  padding: 10px;
+}
+
+.streamNow-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  padding: 12px 18px;
+  order: 0;
+  width: auto;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 30px;
+  margin-left: 50px;
+}
+
+.streamNow-btn:hover {
+  background-color: rgb(223, 222, 222);
+}
+
+.genre {
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.desc {
+  color: white;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section.three .prev,
+section.three .next {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  background-color: rgba(255, 255, 255, .5);
+  right: 0;
+  width: 5vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.three .prev {
+  left: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 9px;
+  width: 9px;
+  border-radius: 20px;
+  background-color: grey;
+  display: inline-block;
+}
+
+.active,
+.dot:hover {
+  background-color: black;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@media (max-width:800px) {
+
+  .moviebox {
+    width: 100vw;
+  }
+
+  section.three .moviebox .movietext {
+    flex-direction: column;
+  }
+
+  .moviebox .movietext a.streamNow-btn {
+    order: 1;
+    padding: 8px 18px;
+    width: auto;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .moviebox .movietext p.genre {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 0.4;
+  }
+
+  .moviebox .movietext p.desc {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  section.three .prev,
+  section.three .next {
+    width: 10vw;
+    height: 10vh;
+    top: 40%;
+  }
+}
+
+
+/* -------footer -------*/
+
+footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.foot {
+  padding: 0 6%;
+  display: flex;
+  background-color: rgba(145, 143, 143, 0.1);
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin-right: 40px;
+  width: 100vw;
+  padding: 20px;
+}
+
+.footer-link-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-link p {
+  font-size: 12px;
+  line-height: 2;
+  color: rgba(12, 12, 12, 0.8);
+
+}
+
+.footer-link-dropdown a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 2;
+  transition: 0.5s;
+  color: grey;
+}
+
+.footer-link-dropdown a:hover {
+  text-decoration: underline;
+}
+
+.last {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.footer-link p span {
+  font-size: 15px;
+  font-weight: bold;
+  display: none;
+}
+
+@media (max-width:800px) {
+  footer {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .foot {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .footer-link {
+    padding: 0;
+    margin: 0;
+    border-top: 0.1px solid rgba(147, 146, 146,0.3);
+    width: 100%;
+  }
+
+  .footer-link p {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px 3px;
+    align-items: center;
+  }
+
+  .footer-link p span {
+    display: block;
+  }
+
+  .footer-link-dropdown {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .footer-link-dropdown a {
+    width: 50%;
+    padding-left: 30px;
+  }
+
+  .last {
+    border: none;
+    font-size: 12px;
+    padding: 15px 0;
+    color: grey;
+  }
+}
